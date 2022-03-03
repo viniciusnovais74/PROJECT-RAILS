@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /**
-*=require bootstrap/dist/css/bootstrap.css
-*=require @fortawesome/fontawesome-free/css/all.min.css
-*=require sb-admin-2.min.css
+ *= require bootstrap/dist/css/bootstrap
+ *= require metismenu/dist/metisMenu
+ *= require sb-admin-2
+ *= require font-awesome/css/font-awesome
 */
