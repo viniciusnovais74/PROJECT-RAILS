@@ -86,6 +86,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
+                        
                         <%= yield %>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -101,6 +102,17 @@
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'admins_backoffice' %>
+    <%if notice %>
+        <%= javascript_tag do %>
+            $.bootstrapGrowl('<%= notice%>', {
+                type: 'success',
+                align: 'right',
+                width: 250,
+                allow_dimiss: true,
+                stackup_spacing:10
+            })
+        <%end%>
+    <%end%>
 </body>
 
 </html>
