@@ -36,7 +36,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   end
   
   def destroy
-    if @question.destroy()
+    if @question.destroy
       redirect_to admins_backoffice_questions_path, notice: "Questão excluída com sucesso!"
     else
       render :index
@@ -46,7 +46,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
   private
 
   def params_question
-    params.require(:question).permit(:description, :subject_id, answers_attributes: [:id, :description, :correct, :_destroy]))
+    params.require(:question).permit(:description, :subject_id, answers_attributes: [:id, :description, :correct, :_destroy])
   end
 
   def set_question

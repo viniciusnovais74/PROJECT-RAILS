@@ -4,6 +4,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   def index
     @admins = Admin.all.page(params[:page]).per(5)
+    @asddsd = Admins.all
   end
 
   def new
