@@ -79,6 +79,7 @@ namespace :dev do
       password_confirmation: 'useruser'
     )
   end
+  
   desc "Adiciona perguntas e respostas"
   task add_answers_and_questions: :environment do
   Subject.all.each do |subject|
@@ -88,10 +89,20 @@ namespace :dev do
       add_answers(answers_array)
       elect_true_answer(answers_array)
       Question.create!(params[:question])
+      end
     end
   end
-end
-private
+
+  desc "Reseta o contador dos assuntos"
+  task reset_subject_counter: :environment do
+  show_spinner("Resetando contador dos assuntos...") do
+    Subject.find_each do |subject|
+      Subject.reset_counters(subject.id, :questions)
+      end
+    end
+  end
+
+  private
 
   def create_question_params(subject = Subject.all.sample)
     { question: {
@@ -100,6 +111,7 @@ private
                   answers_attributes: []
                 }
     }
+  
   end
 
   def create_answer_params(correct = false)
