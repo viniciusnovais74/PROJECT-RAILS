@@ -17,6 +17,6 @@ scope :_search_subject_, -> (page,subject_id){
 }
 
   scope :last_questions, ->(page){
-    includes(:answers).order('created_at desc').page()
+    includes(:answers, :subject).order('created_at desc').page(page)
 }
 end

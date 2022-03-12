@@ -10,10 +10,7 @@ Rails.application.routes.draw do
     get 'subject/:subject_id/:subject', to: 'search#subject', as: 'search_subject'
     post 'answer', to: 'answer#question'
   end
-  namespace :profiles_backoffice do
-    get 'welcome/index'
-        
-  end
+  
   namespace :admins_backoffice do
     get 'welcome/index'
     resources :admins #Administradores
