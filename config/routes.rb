@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     get 'welcome/index'
     get 'profile', to: 'profile#edit'
     patch 'profile', to: 'profile#update'
+    get 'zip_code', to: 'zip_code#show'
   end
   namespace :site do
     get 'welcome/index'

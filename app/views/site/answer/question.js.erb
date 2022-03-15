@@ -1,9 +1,9 @@
-var button = document.getElementById("submit_<%=@answer.question_id%>")
+var button = document.getElementById("submit_<%=@question_id%>")
 
 button.classList.remove('btn-default')
 button.classList.remove('btn-success')
 button.classList.remove('btn-danger')
-if(<%=@answer.correct%>){
+if(<%=@correct%>){
   button.classList.add('btn-success')
   $.bootstrapGrowl('You are correct!', {
     type: 'success',

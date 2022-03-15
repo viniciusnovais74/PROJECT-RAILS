@@ -4,9 +4,9 @@ module SiteHelper
     when 'index'
       "Ultimas perguntas cadastradas.."
     when 'questions'
-      "Resultados para o termo \"#{params[:term]}\"..."
+      "Resultados para o termo \"#{sanitize params[:term]}\"..."
     when 'subject'
-      "Mostrando por categoria \"#{params[:subject]}\"..."
+      "Mostrando por categoria \"#{sanitize params[:subject]}\"..."
     end
   end
 end
